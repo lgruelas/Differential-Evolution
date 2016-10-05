@@ -9,10 +9,10 @@ class Ind
 {
     public:
         Ind(float alpha, float beta, float gamma);
-        void setAptitud(float apt);
-        float getAptitud();
+        void setAptitud(double apt);
         void setVariables(float a, float b, float g);
         void setVariables(vector<float> entrada);
+        double getAptitud();
         vector<float> getVariables();
     private:
         vector<float> variables;

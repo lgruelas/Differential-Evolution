@@ -10,7 +10,7 @@ Ind::Ind(float alpha, float beta, float gamma)
     setVariables(alpha, beta, gamma);
 }
 
-void Ind::setAptitud(float apt)
+void Ind::setAptitud(double apt)
 {
     aptitud = apt;
 }
@@ -25,7 +25,7 @@ void Ind::setVariables(vector<float> entrada)
     variables = entrada;
 }
 
-float Ind::getAptitud()
+double Ind::getAptitud()
 {
     return aptitud;
 }

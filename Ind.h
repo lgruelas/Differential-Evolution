@@ -12,8 +12,9 @@ class Ind
         void setAptitud(double apt);
         void setVariables(float a, float b, float g);
         void setVariables(vector<float> entrada);
-        double getAptitud();
+        double getAptitud() const;
         vector<float> getVariables();
+        friend bool operator<(Ind const & L, Ind const & R);
     private:
         vector<float> variables;
         float aptitud;

@@ -10,7 +10,8 @@ class Ind
     public:
         Ind(float alpha, float beta, float gamma);
         void setAptitud(double apt);
-        void setVariables(float a, float b, float g);
+        //hola
+	void setVariables(float a, float b, float g);
         void setVariables(vector<float> entrada);
         double getAptitud() const;
         vector<float> getVariables();

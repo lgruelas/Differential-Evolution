@@ -5,26 +5,26 @@
 
 using namespace std;
 
-Ind::Ind(float alpha, float beta, float gamma)
+Ind::Ind(const float& alpha, const float& beta, const float& gamma)
 {
     setVariables(alpha, beta, gamma);
 }
 
-bool operator<(Ind const & L, Ind const & R) { 
+bool operator<(Ind const & L, Ind const & R) {
     return L.getAptitud() < R.getAptitud();
 }
 
-void Ind::setAptitud(double apt)
+void Ind::setAptitud(const double& apt)
 {
     aptitud = apt;
 }
 
-void Ind::setVariables(float a, float b, float g)
+void Ind::setVariables(const float& a, const float& b, const float& g)
 {
     variables = {a, b, g};
 }
 
-void Ind::setVariables(vector<float> entrada)
+void Ind::setVariables(const vector<float>& entrada)
 {
     variables = entrada;
 }

@@ -1,9 +1,9 @@
 /*
- * Genetic Algorithm 
- * Differential Evolution 
+ * Genetic Algorithm
+ * Differential Evolution
  * Germán Ruelas Luna
  * lgruelas@hotmail.com
- * 
+ *
  * to compile please une c++11 flags
  */
 
@@ -66,16 +66,16 @@ using namespace std;
 double getError(vector<int> v1, vector<float> v2)
 {
     vector<float> c(v1.size(), 0);
-    
+
     for(int i = 0; i < v1.size(); i++)
     {
         c[i]=pow((v1[i]-v2[i]),2);
     }
-    
+
     double suma = 0;
     for (auto x: c)
         suma+=x;
-    
+
     return suma;
 }
 
@@ -84,12 +84,12 @@ double holtWinters(vector<float> parametros, int p, vector<int> datos)
     float a = parametros[0];
     float b = parametros[1];
     float g = parametros[2];
-    
+
     auto L = [a](float lvl, float trd, float sea, float dato) -> float {return a*(dato/sea)+(1-a)*(lvl-trd);};
     auto T = [b](float l, float lvl, float trd) -> float {return b*(l-lvl)+(1-b)*trd;};
     auto S = [g](float dato, float lvl, float sea2) -> float {return g*(dato/lvl) + (1-g)*(sea2);};
     auto Y = [](float l, float t, float s) -> float {return(l+t)*s;};
-    
+
     vector<float> level = {(float) datos[0]};
     vector<float> trend = {(float) datos[0]};
     vector<float> seasonal (p, g+(datos[0]*(1-g)));
@@ -109,7 +109,7 @@ bool isValid(vector<float> to_check)
     for (auto x : to_check)
     {
         if ((x < 0) || (x > 1))
-        {   
+        {
             return false;
         }
     }
@@ -119,11 +119,11 @@ bool isValid(vector<float> to_check)
 void cruzar(Ind &ind, vector<float> y, int p, vector<int> datos)
 {
     random_device rd;
-    mt19937 eng(rd()); 
+    mt19937 eng(rd());
     uniform_int_distribution<int> distr(1,3);
     uniform_real_distribution<float> use(0.0, 1.0);
     vector<float> z;
-    
+
     int to_stay = distr(eng);
     for (int i = 1; i <= 3; i++)
     {
@@ -163,7 +163,7 @@ vector<int> seleccionar(int tamanho, int usado)
         indices[i] = indices[j];
         indices[j] = tmp;
     }
-    
+
     vector<int> to_return(indices.begin(), indices.begin()+3);
     return to_return;
 }
@@ -178,30 +178,30 @@ int main()
     {
         data.push_back(dato);
     }
-    
+
     random_device rd;
     mt19937 eng(rd());
     uniform_real_distribution<float> distr(0.0, 1.0);
-    
+
     int lambda = 100;
     int max_iter = 200;
     int p = 12;
     vector<float> direccionVector;
     vector<float> y;
-    
+
     vector<Ind> poblacion;
-    
+
     for (int i = 0; i < lambda; i++)
     {
         Ind nuevo_individuo(distr(eng), distr(eng), distr(eng));
         poblacion.push_back(nuevo_individuo);
     }
-    
+
     for (auto &x : poblacion)
     {
         x.setAptitud(holtWinters(x.getVariables(), p, data));
     }
-    
+
     for (int i = 0; i < max_iter; i++)
     {
         for (int j = 0; j < lambda; j++)
@@ -210,11 +210,11 @@ int main()
             bool listo = false;
             float f = 0.8;
             vector<int> elementos = seleccionar(lambda, j);
-            
-            while (true) 
+
+            while (true)
             {
                 do {
-                    direccionVector = poblacion[elementos[index[0]]].getVariables() - poblacion[elementos[index[1]]].getVariables();    
+                    direccionVector = poblacion[elementos[index[0]]].getVariables() - poblacion[elementos[index[1]]].getVariables();
                     y = poblacion[elementos[index[2]]].getVariables() + (direccionVector*f);
                     if (isValid(y))
                     {
@@ -222,7 +222,7 @@ int main()
                         break;
                     }
                 } while (next_permutation(index.begin(), index.end()));
-                
+
                 if (listo)
                 {
                     break;
@@ -233,6 +233,6 @@ int main()
         }
     }
     sort(poblacion.begin(), poblacion.end());
-    cout << poblacion[0].getAptitud() << " : " << poblacion[0].getVariables() << endl;
+    cout << poblacion[0].getAptitud() << " " << poblacion[0].getVariables() << endl;
     return 0;
 }

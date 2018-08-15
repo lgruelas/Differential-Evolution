@@ -12,15 +12,11 @@ Specific for fedora but is pretty easy to follow along in any linux distribution
 
 ### Prerequisites
 
-*Linux
-
-*g++
-
-*Python 2.7
-
-*Matplotlib
-
-*Numpy
+* Linux
+* g++
+* Python 2.7
+* Matplotlib
+* Numpy
 
 
 Python and dependencies:
@@ -67,5 +63,5 @@ Te project has ended, currently do not have maintenance.
 
 ## Acknowledgments
 
-*Dr. Luis Miguel García Velázquez for the idea and understanding of the technique.
-*Carlos Montiel for the python graphing part
+* Dr. Luis Miguel García Velázquez for the idea and understanding of the technique.
+* Carlos Montiel for the python graphing part

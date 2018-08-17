@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/lgruelas/Differential-evolution.svg?branch=master)](https://travis-ci.org/lgruelas/Differential-Evolution)
+[![license](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://github.com/lgruelas/Differential-Evolution/blob/master/LICENSE)
+
 # Differential Evolution
 
 Python - C++ implementation for Holt-Winters optimization.
@@ -48,7 +51,7 @@ you might have to use `python3` instead os `python`
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. 
+We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
@@ -68,4 +71,3 @@ The project has ended, currently do not have maintenance. I'm willing to add new
 
 * Dr. Luis Miguel García Velázquez for the idea and understanding of the technique.
 * Carlos Montiel for the python graphing part
-

@@ -17,19 +17,20 @@ def run_cpp():
     print("excecuting differential evolution...")
     return [float(i) for i in subprocess.check_output(['./outfile']).strip().split() if ord(i.decode('utf-8')[0]) < 58]
 
-a = run_cpp()
-print("done")
-data = []
-print("reading data...")
-with open('data2.csv', 'r') as archivo:
-    for i in archivo:
-        j=i.strip().split()
-        data.append(np.float(j[0]))
-print("done")
+if __name__ == '__main__':
+    a = run_cpp()
+    print("done")
+    data = []
+    print("reading data...")
+    with open('data2.csv', 'r') as archivo:
+        for i in archivo:
+            j=i.strip().split()
+            data.append(np.float(j[0]))
+    print("done")
 
-print("applying Holt-Winters with values from differential evolution...")
-y=auxiliar.holtWinters(data, a[1], a[2], a[3])
-print("done")
+    print("applying Holt-Winters with values from differential evolution...")
+    y=auxiliar.holtWinters(data, a[1], a[2], a[3])
+    print("done")
 
-if auxiliar.graficar(data, y):
-    print("Image is saved as figura2.png in current directory")
+    if auxiliar.graficar(data, y):
+        print("Image is saved as figura2.png in current directory")

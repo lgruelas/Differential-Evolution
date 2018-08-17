@@ -8,5 +8,4 @@ install:
 branches:
   only:
     - master
-script:
-  pytest
+script: pytest

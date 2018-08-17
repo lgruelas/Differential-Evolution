@@ -18,6 +18,10 @@ Specific for fedora but is pretty easy to follow along in any linux distribution
 * Matplotlib
 * Numpy
 
+g++
+```
+sudo dnf -y install gcc-c++
+```
 
 Python and dependencies:
 ```
@@ -28,10 +32,12 @@ pip install --user matplotlib
 ```
 
 ### Installing
+It's all done, you just have to run with:
+```
+python graficar.py
+```
 
-```
-make
-```
+you might have to use `python3` instead os `python`
 
 ### Using
 after install, you just need to use
@@ -41,6 +47,7 @@ python graficar.py
 ## Built With
 
 * [Python](https://www.python.org/downloads/release/python-2714/)
+* [C++11](http://www.cplusplus.com/)
 
 
 ## Versioning
@@ -59,7 +66,7 @@ This project is licensed under the GPL 3 License - see the [LICENSE.md](LICENSE.
 
 ## Project Status
 
-Te project has ended, currently do not have maintenance.
+The project has ended, currently do not have maintenance. I'm willing to add new features in case that is needed.
 
 ## Acknowledgments
 

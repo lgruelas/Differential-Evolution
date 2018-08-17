@@ -8,12 +8,16 @@ import numpy as np
 import os
 import subprocess
 
-print("building differential evolution...")
-os.system('rm -f outfile')
-os.system('g++ -std=c++11 main.cpp Ind.cpp -o outfile')
-print("done")
-print("excecuting differential evolution...")
-a = [float(i) for i in subprocess.check_output(['./outfile']).strip().split() if ord(i.decode('utf-8')[0]) < 58]
+
+def run_cpp():
+    print("building differential evolution...")
+    os.system('rm -f outfile')
+    os.system('g++ -std=c++11 main.cpp Ind.cpp -o outfile')
+    print("done")
+    print("excecuting differential evolution...")
+    return [float(i) for i in subprocess.check_output(['./outfile']).strip().split() if ord(i.decode('utf-8')[0]) < 58]
+
+a = run_cpp()
 print("done")
 data = []
 print("reading data...")
@@ -26,5 +30,6 @@ print("done")
 print("applying Holt-Winters with values from differential evolution...")
 y=auxiliar.holtWinters(data, a[1], a[2], a[3])
 print("done")
-auxiliar.graficar(data, y)
-print("Image is saved as figura2.png in current directory")
+
+if auxiliar.graficar(data, y):
+    print("Image is saved as figura2.png in current directory")

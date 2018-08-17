@@ -1,0 +1,12 @@
+sudo: false
+languaje: python
+python:
+  - "2.7"
+  - "3.5"
+install:
+  - pip install -r requerimens.txt
+branches:
+  only:
+    - master
+script:
+  pytest

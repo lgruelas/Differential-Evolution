@@ -10,14 +10,14 @@ def holtWinters(data, alpha=0.1,beta=0.5,gamma=0.95,p=12):
     L0=[data[0]]
     T0=[data[0]]
     S0=[gamma+(data[0]*(1-gamma)) for i in range (p)]
-    
+
     L=lambda alpha,yt,st,lt,tt: alpha*(yt/st)+(1-alpha)*(lt-tt)
-    
+
     T=lambda beta,lt2,lt1,Tt1 : beta*(lt2-lt1)+(1-beta)*Tt1
-    
+
     S=lambda gamma,yt,lt,st_p : gamma*(yt/lt) + (1-gamma)*(st_p)
-    
-    Ye=lambda l,t,s: (l+t)*s    
+
+    Ye=lambda l,t,s: (l+t)*s
     y=[]
     j=0
     for i in range (len(data)):
@@ -36,9 +36,8 @@ def holtWinters(data, alpha=0.1,beta=0.5,gamma=0.95,p=12):
     return y
 
 
-        
-def graficar(data,y):
 
+def graficar(data,y):
     plt.grid()
     plt.plot(data,color="blue")
     plt.plot(y,color="red")
@@ -49,4 +48,4 @@ def graficar(data,y):
     red_patch1 = mpatches.Patch(color='blue', label='Datos Reales')
     plt.legend(handles=[red_patch,red_patch1])
     plt.savefig("figura2.png")
-    return 
+    return True

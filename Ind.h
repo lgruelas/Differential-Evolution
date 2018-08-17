@@ -8,11 +8,10 @@ using namespace std;
 class Ind
 {
     public:
-        Ind(float alpha, float beta, float gamma);
-        void setAptitud(double apt);
-        //hola
-	void setVariables(float a, float b, float g);
-        void setVariables(vector<float> entrada);
+        Ind(const float& alpha, const float& beta, const float& gamma);
+        void setAptitud(const double& apt);
+	      void setVariables(const float& a, const float& b, const float& g);
+        void setVariables(const vector<float>& entrada);
         double getAptitud() const;
         vector<float> getVariables();
         friend bool operator<(Ind const & L, Ind const & R);

@@ -48,5 +48,6 @@ def graficar(data,y):
     red_patch = mpatches.Patch(color='red', label=u'Evolución Diferencial')
     red_patch1 = mpatches.Patch(color='blue', label='Datos Reales')
     plt.legend(handles=[red_patch,red_patch1])
+    plt.show()
     plt.savefig("figura2.png")
     return 

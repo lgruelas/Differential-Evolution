@@ -32,18 +32,15 @@ pip install --user matplotlib
 ```
 
 ### Installing
-It's all done, you just have to run with:
-```
-python graficar.py
-```
-
-you might have to use `python3` instead os `python`
+It's all done, you can just using it.
 
 ### Using
 after install, you just need to use
 ```
 python graficar.py
 ```
+you might have to use `python3` instead os `python`
+
 ## Built With
 
 * [Python](https://www.python.org/downloads/release/python-2714/)

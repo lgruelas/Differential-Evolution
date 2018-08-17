@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lgruelas/Differential-evolution.svg?branch=master)](https://travis-ci.org/lgruelas/Differential-Evolution)
+[![Build Status](https://api.travis-ci.org/lgruelas/Differential-Evolution.svg?branch=master)](https://travis-ci.org/lgruelas/Differential-Evolution)
 [![license](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://github.com/lgruelas/Differential-Evolution/blob/master/LICENSE)
 
 # Differential Evolution

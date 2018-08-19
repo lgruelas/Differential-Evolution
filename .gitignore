@@ -2,3 +2,4 @@
 *.exe
 outfile
 .directory
+.pytest_cache/

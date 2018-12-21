@@ -35,14 +35,14 @@ pip install --user matplotlib
 ```
 
 ### Installing
-It's all done, you can just using it.
+It's all done, you can just use it.
 
 ### Using
-after install, you just need to use
+after install, you just need to use:
 ```
 python graficar.py
 ```
-you might have to use `python3` instead os `python`
+you might have to use `python3` instead of `python`
 
 ## Built With
 
